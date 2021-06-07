@@ -47,7 +47,6 @@ async function streamToBuffer(stream) {
         worksheet.addImage(imageId, {
           tl: { col: 6, row:  rowId},
           ext: { width: 100, height: 100 },
-          editAs: 'oneCell'
         });
 
         row.height = 100;
