@@ -37,10 +37,10 @@ async function streamToBuffer(stream) {
       const workbook = new Excel.Workbook();
       workbook.xlsx.readFile(parsedReadPath).then(async () => {
         const worksheet = await workbook.getWorksheet(1);
-        await Promise.all(worksheet.getRows(2, worksheet.rowCount - 2).map(async (row, rowIndex) => {
-          const rowId = rowIndex + 1;
+        await Promise.all(worksheet.getRows(19, worksheet.rowCount - 18).map(async (row, rowIndex) => {
+          const rowId = rowIndex + 18;
 
-          const valueToQr = row.getCell("F").value?.result;
+          const valueToQr = row.getCell("G").value?.result;
 
           const imageBuffer = await generateQrImage(valueToQr);
           const imageId = workbook.addImage({
@@ -49,7 +49,7 @@ async function streamToBuffer(stream) {
           });
 
           worksheet.addImage(imageId, {
-            tl: { col: 6, row:  rowId},
+            tl: { col: 7, row:  rowId},
             ext: { width: 100, height: 100 },
           });
 
