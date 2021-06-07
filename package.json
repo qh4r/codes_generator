@@ -1,0 +1,16 @@
+{
+  "name": "qr_in_excel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "exceljs": "^4.2.1",
+    "qr-image": "^3.2.0"
+  }
+}
